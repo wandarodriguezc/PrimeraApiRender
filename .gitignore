@@ -1,0 +1,8 @@
+# Excluir todas las carpetas __pycache__ en cualquier ubicación
+**/__pycache__/
+
+# Excluir la carpeta venv en la raíz del proyecto
+/venv/
+
+# Excluir el archivo .flake8 en la raíz del proyecto
+/.flake8
