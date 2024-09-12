@@ -48,7 +48,7 @@ async def cantidad_filmaciones_mes(mes: str) -> BaseFilmacionesMes:
         number_movies = filmaciones_mes.filter(mask)["cantidad_peliculas"][0]
     except IndexError:
         # Si entro en este except es porque el `mes` recibido está mal escrito
-        raise HTTPException(status_code=404, detail="BAD REQUEST")
+        raise HTTPException(status_code=400, detail="BAD REQUEST")
 
     message = f"{number_movies} cantidad de películas fueron estrenadas en el mes de {mes.upper()}"
     return BaseFilmacionesMes(
