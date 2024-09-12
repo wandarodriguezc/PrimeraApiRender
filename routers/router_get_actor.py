@@ -46,7 +46,7 @@ async def get_actor(nombre_actor: str) -> BaseActor:
                         message: str
     """
 
-    mask = get_actores["actor"] == nombre_actor.upper()
+    mask = get_actores["actor"] == nombre_actor.strip().upper()
     try:
         number_movies = get_actores.filter(mask)["number_of_movies"][0]
         total_return = get_actores.filter(mask)["total_return"][0]

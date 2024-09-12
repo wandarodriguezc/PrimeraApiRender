@@ -43,7 +43,7 @@ async def cantidad_filmaciones_mes(mes: str) -> BaseFilmacionesMes:
                                 message: str
     """
     # filtro la data comparando contra el string recibido elevado a MAYUSCULAS
-    mask = filmaciones_mes["month"] == mes.upper()
+    mask = filmaciones_mes["month"] == mes.strip().upper()
     try:
         number_movies = filmaciones_mes.filter(mask)["cantidad_peliculas"][0]
     except IndexError:

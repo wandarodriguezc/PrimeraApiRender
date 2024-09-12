@@ -43,7 +43,7 @@ async def score_titulo(titulo_filmacion: str) -> BaseScoreTitulo:
                             message: str
     """
     # data filtrada comparando el campo `title` con el recibido elevado a MAYUSCULAS
-    mask = titulos["title"] == titulo_filmacion.upper()
+    mask = titulos["title"] == titulo_filmacion.strip().upper()
     try:
         popularity = titulos.filter(mask)["popularity"][0]
         year = titulos.filter(mask)["release_year"][0]

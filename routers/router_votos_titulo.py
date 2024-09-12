@@ -50,7 +50,7 @@ async def votos_titulos(titulo_filmacion: str) -> BaseVotosTitulo:
                             message: str
     """
     # data filtrada comparando el campo `title` con el recibido elevado a MAYUSCULAS
-    mask = score_titulo["title"] == titulo_filmacion.upper()
+    mask = score_titulo["title"] == titulo_filmacion.strip().upper()
     try:
         vote_count = score_titulo.filter(mask)["vote_count"][0]
         vote_average = score_titulo.filter(mask)["vote_average"][0]

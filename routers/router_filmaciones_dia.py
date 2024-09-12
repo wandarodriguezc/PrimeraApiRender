@@ -43,7 +43,7 @@ async def cantidad_filmaciones_dia(dia: str) -> BaseFilmacionesDia:
                                 message: str
     """
     # filtro la data comparando contra el string recibido elevado a MAYUSCULAS
-    mask = filmaciones_dia["day"] == dia.upper()
+    mask = filmaciones_dia["day"] == dia.strip().upper()
     try:
         number_movies = filmaciones_dia.filter(mask)["cantidad_peliculas"][0]
     except IndexError:

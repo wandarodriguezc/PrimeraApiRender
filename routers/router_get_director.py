@@ -63,7 +63,7 @@ async def get_director(nombre_director: str) -> BaseDirector:
     """
     try:
         # Obteniendo la lista de id de peliculas de la tabla directores
-        mask = directores["director"] == nombre_director.upper()
+        mask = directores["director"] == nombre_director.strip().upper()
         movies_list = directores.filter(mask)["movies"].to_list()[0]
 
         # Filtrando la tabla get_director y obteniendo la informacion
