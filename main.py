@@ -7,6 +7,10 @@ from routers import router_score_titulo
 from routers import router_get_actor
 from routers import router_get_director
 from routers import router_recomendacion
+# NUEVAS PROYECTO EMPLEOS ESPAÑA
+from routers import router_download_parquet
+from routers import router_upload_parquet
+from routers import router_wake_up
 
 app = FastAPI()
 
@@ -18,6 +22,10 @@ app.include_router(router_votos_titulo.router)
 app.include_router(router_get_actor.router)
 app.include_router(router_get_director.router)
 app.include_router(router_recomendacion.router)
+# NUEVAS PROYECTO EMPLEOS ESPAÑA
+app.include_router(router_download_parquet.router)
+app.include_router(router_upload_parquet.router)
+app.include_router(router_wake_up.router)
 
 
 @app.get("/")
